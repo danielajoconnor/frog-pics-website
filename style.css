@@ -45,19 +45,24 @@ html {
     width: 200px;
     transition: width 250ms ease;
     /* transform: translateY(110%); */
+    opacity: 0;
     animation: fadeinlogo 600ms ease-out forwards;
+    animation-delay: 0.4s;
+
 }
 
 @keyframes fadeinlogo {
     0%{
         transform: translateY(110%);
         opacity: 0;
+        /* animation-delay: 8s; */
     }
     30%{
         opacity:0;
     }
     100%{
         transform: translateY(0);
+        opacity: 100%;
     }
 }
 
@@ -154,6 +159,8 @@ body{
 .contactimg img{
     width: 100%;
     animation: fadeinside 600ms ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
 }
 
 @keyframes fadeinside {
@@ -166,6 +173,7 @@ body{
     }
     100%{
         transform: translateX(0);
+        opacity: 100%;
     }
 }
 
