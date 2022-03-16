@@ -13,7 +13,9 @@ html {
 #navbar {
     display:flex;
     justify-content: center;
-    background-color: #1CAC3A;
+    background: hsl(132 72% 39% / 50%);
+    backdrop-filter: blur(3rem);
+    /* background-color: #1CAC3A; */
     border-radius: 5rem;
     padding: 1.5rem;
     min-width: 30rem;
@@ -40,11 +42,42 @@ html {
 }
 
 #logosize{
-    width: 200px
+    width: 200px;
+    transition: width 250ms ease;
+    /* transform: translateY(110%); */
+    animation: fadeinlogo 600ms ease-out forwards;
 }
 
-h1 {
+@keyframes fadeinlogo {
+    0%{
+        transform: translateY(110%);
+        opacity: 0;
+    }
+    30%{
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.froglogo{
+    height: 20rem;
+    overflow: hidden;
+}
+
+#logosize:hover{
+    width:250px
+}
+
+h1.index {
     font-size: clamp(3rem, 6vw, 5rem);
+    color:white;
+    margin: 50px 0px 0px 0px;
+}
+
+h1.contact{
+    font-size: clamp(3rem, 12vw, 5rem);
     color:white;
     margin: 50px 0px 0px 0px;
 }
@@ -52,7 +85,7 @@ h1 {
 h2 {
     font-size: clamp(1rem, 6vw, 3rem);
     color:white;
-    margin-top: 6%;
+    margin-top: 0%;
 }
 
 .aboutpgraph{
@@ -81,8 +114,9 @@ body{
 }
 
 .imgadjust img{
+    /* max-width: 36.4rem; */
     width: 32%;
-    background-color: #1CAC3A;
+    background: hsl(132 72% 39% / 60%);
     padding: 5px;
     border-radius: 15px; 
     margin: 0.3%;
@@ -95,5 +129,60 @@ body{
     .imgadjust img{
         width: 100%;
     }
+    #contactscreen{
+        flex-direction: column;
+    }
+    .contactimg{
+        margin: 0 auto;
+    }
+}
 
+#contactscreen{
+    display:flex;
+    justify-content: center;
+    font-size: clamp(1rem, 4vw, 2rem);
+    color:white;
+
+}
+
+.contactimg{
+    min-width: 20rem;
+    max-width: 25rem;
+    /* overflow: hidden; */
+}
+
+.contactimg img{
+    width: 100%;
+    animation: fadeinside 600ms ease-out forwards;
+}
+
+@keyframes fadeinside {
+    0%{
+        transform: translateX(-110%);
+        opacity: 0;
+    }
+    30%{
+        opacity:0;
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+#contactlist{
+    margin:0 auto;
+    max-width: 50rem;
+    padding: 1rem 3rem 1rem 3rem;
+    background: hsl(132 72% 39% / 60%);  
+    backdrop-filter: blur(2rem);
+    border-radius: 2.5rem;
+    border-style: solid;
+    border-width: 0.5rem;
+    /* border-color: white; */
+}
+
+#contactlist p > span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    justify-content: space-between
 }
