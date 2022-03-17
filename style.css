@@ -15,7 +15,6 @@ html {
     justify-content: center;
     background: hsl(132 72% 39% / 50%);
     backdrop-filter: blur(3rem);
-    /* background-color: #1CAC3A; */
     border-radius: 5rem;
     padding: 1.5rem;
     min-width: 30rem;
@@ -44,18 +43,15 @@ html {
 #logosize{
     width: 200px;
     transition: width 250ms ease;
-    /* transform: translateY(110%); */
     opacity: 0;
     animation: fadeinlogo 600ms ease-out forwards;
     animation-delay: 0.4s;
-
 }
 
 @keyframes fadeinlogo {
     0%{
         transform: translateY(110%);
         opacity: 0;
-        /* animation-delay: 8s; */
     }
     30%{
         opacity:0;
@@ -86,6 +82,11 @@ h1.contact{
     color:white;
     margin: 50px 0px 0px 0px;
 }
+h1.about{
+    font-size: clamp(3rem, 12vw, 5rem);
+    color:white;
+    margin: 50px 0px 0px 0px;
+}
 
 h2 {
     font-size: clamp(1rem, 6vw, 3rem);
@@ -94,7 +95,16 @@ h2 {
 }
 
 .aboutpgraph{
+    font-size: 2rem;
     color: white;
+    max-width: 80rem;
+    margin: 4rem auto;
+    padding: 1rem 3rem 1rem 3rem;
+    background: hsl(132 72% 39% / 60%);  
+    backdrop-filter: blur(2rem);
+    border-radius: 2.5rem;
+    border-style: solid;
+    border-width: 0.5rem;
 }
 
 .center{
@@ -102,7 +112,7 @@ h2 {
 }
 
 body{
-    background-image: url("rainforestblurred.jpg");
+    background-image: url("rainforestblurredcompressed.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -119,7 +129,6 @@ body{
 }
 
 .imgadjust img{
-    /* max-width: 36.4rem; */
     width: 32%;
     background: hsl(132 72% 39% / 60%);
     padding: 5px;
@@ -153,7 +162,6 @@ body{
 .contactimg{
     min-width: 20rem;
     max-width: 25rem;
-    /* overflow: hidden; */
 }
 
 .contactimg img{
@@ -186,11 +194,41 @@ body{
     border-radius: 2.5rem;
     border-style: solid;
     border-width: 0.5rem;
-    /* border-color: white; */
+    border-color: white;
 }
 
 #contactlist p > span{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     justify-content: space-between
+}
+
+#aboutscreen{
+    display:flex;
+    justify-content: center;
+}
+
+.aboutimg img{
+    padding: 1rem;
+    background: hsl(132 72% 39% / 30%);  
+    backdrop-filter: blur(2rem);
+    border-radius: 50rem;
+    border-style: solid;
+    border-width: 0.5rem;
+    border-color: white;
+    animation: grow 600ms ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+@keyframes grow {
+    0%{
+        max-width: 0rem;
+        opacity: 0;
+    }
+    100%{     
+        min-width: 10rem;
+        max-width: 27rem;
+        opacity: 100%;
+    }
 }
